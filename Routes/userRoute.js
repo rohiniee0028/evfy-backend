@@ -68,7 +68,7 @@ userRegister.post("/forgot-password", async (req, res) => {
     const token = jwt.sign({ email: oldUser.email, id: oldUser._id }, secret, {
       expiresIn: "5m",
     });
-    const link = `http://localhost:5000/user/reset-password/${oldUser._id}/${token}`;
+    const link = `https://evfy-backend.onrender.com/user/reset-password/${oldUser._id}/${token}`;
     var transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
